@@ -1,0 +1,6 @@
+{"last_game": {
+  "players": ["Max", "Den", "Vas"],
+  "move_on": "Den",
+  "scores": [2, 3, 5],
+  "balls": [[110, 200], [110, 250]]
+}}
