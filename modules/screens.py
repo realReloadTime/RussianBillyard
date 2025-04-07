@@ -21,6 +21,8 @@ class MainMenuScreen:
                 100 + (self.window_size[1] / len(self.btns) - 50) * index
             ))
 
+
+
     def draw_screen(self):
         running = True
         clock = pygame.time.Clock()
@@ -35,9 +37,8 @@ class MainMenuScreen:
                 # Обновляем состояние всех кнопок
                 for button in self.btns:
                     if button.update(event) and button.is_clicked_now():
-                        print(f'BTN: {button.text} {button.rect} {event.pos}')
+                        # print(f'BTN: {button.text} {button.rect} {event.pos}')
                         if button.text == 'Выход':
-                            self.screen.fill('GRAY')
                             running = False
 
             # Отрисовка всех кнопок ПОСЛЕ обработки событий
@@ -46,9 +47,6 @@ class MainMenuScreen:
 
             pygame.display.flip()
             clock.tick(60)
-
-        pygame.quit()
-        print('Работа приложения была успешно завершена!')
 
         pygame.quit()
         print('Работа приложения была успешно завершена!')
