@@ -75,3 +75,19 @@ class Button:
             self.rect.x, self.rect.y = x_y
         if w_h:
             self.rect.width, self.rect.height = w_h
+
+
+class LabelText:
+    def __init__(self, x, y, text, font_size=64, color=(0, 0, 0)):
+        self.rect = pygame.Rect(x, y, 0, 0)
+        self.text = text
+        self.font = pygame.font.SysFont('Arial', font_size)
+        self.text_color = color
+
+    def draw(self, surface):
+        text_surface = self.font.render(self.text, True, self.text_color)
+        self.rect = text_surface.get_rect(center=self.rect.center)
+
+        surface.blit(text_surface, self.rect)
+
+
