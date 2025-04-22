@@ -81,7 +81,7 @@ class LabelText:
     def __init__(self, x, y, text, font_size=64, color=(0, 0, 0)):
         self.rect = pygame.Rect(x, y, 0, 0)
         self.text = text
-        self.font = pygame.font.SysFont('Arial', font_size)
+        self.font = pygame.font.Font('../data/fonts/AdventPro-VariableFont_wdth,wght.ttf', font_size)
         self.text_color = color
 
     def draw(self, surface):

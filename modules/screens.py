@@ -29,24 +29,25 @@ class MainMenuScreen:
 
     def get_decorative_balls(self):
         balls = list()
-        for i in range(16):
-            balls.append(Ball(self.screen,
-                                   40,
-                                   self.window_size[0] // 16 * i + 50,
-                                   randint(50, self.window_size[1])))
+        for i in range(8):
+            balls.append(
+                Ball(50, randint(0, self.window_size[0] / 3), randint(0, self.window_size[1])))
+        for i in range(8):
+            balls.append(
+                Ball(50, randint(self.window_size[0] / 3 * 2, self.window_size[0]), randint(0, self.window_size[1])))
         return balls
 
     def draw_screen(self):
         running = True
         clock = pygame.time.Clock()
 
-        game_label = LabelText(self.window_size[0] // 2, 75, 'РУССКИЙ БИЛЬЯРД', 96, (235, 235, 235))
+        game_label = LabelText(self.window_size[0] // 2, 75, 'Русский бильярд', 96, (255, 255, 255))
         balls = self.get_decorative_balls()
         while running:
             self.screen.fill(self.fill)
 
             for ball in balls:
-                ball.update(2000, 2000)
+                ball.draw(screen)
             # Обработка всех событий ДО отрисовки кнопок
             for event in pygame.event.get():
                 if event.type == QUIT:
@@ -71,6 +72,11 @@ class MainMenuScreen:
 
         pygame.quit()
         print('Работа приложения была успешно завершена!')
+
+
+# class ChoiceEnemyScreen:
+#     def __init__(self):
+
 
 
 if __name__ == '__main__':
